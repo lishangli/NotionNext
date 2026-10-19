@@ -1,4 +1,5 @@
 import { siteConfig } from '@/lib/config'
+import CopyArticleButton from '@/components/CopyArticleButton'
 import { compressImage, mapImgUrl } from '@/lib/db/notion/mapImage'
 import NotionEmbed from '@/components/NotionEmbed'
 import NotionLink from '@/components/NotionLink'
@@ -115,6 +116,7 @@ const NotionPage = ({ post, className }) => {
     <div
       id='notion-article'
       className={`mx-auto overflow-hidden ${className || ''}`}>
+      <CopyArticleButton post={post} />
       <NotionRenderer
         recordMap={post?.blockMap}
         mapPageUrl={mapPageUrl}
